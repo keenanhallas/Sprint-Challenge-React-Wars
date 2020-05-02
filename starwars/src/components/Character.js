@@ -14,13 +14,13 @@ const CardStyler = styled.div`
 
 const CardHeader = styled.div`
     font-family: 'Orbitron', sans-serif;
-    font-size: 2rem;
+    font-size: 1.75rem;
 `;
 
 const CardBody = styled.div`
     text-align: left;
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 `;
 
 const Character = ({name, homeworld, gender, height, weight, eyeColor, hairColor}) => {
