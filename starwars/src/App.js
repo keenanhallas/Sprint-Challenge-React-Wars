@@ -41,7 +41,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <MainHeader className="Header">Characters</MainHeader>
+      <MainHeader className="Header">Star Wars Characters</MainHeader>
       <CardSection>
       {
         characterArr.map((char, i) => {
