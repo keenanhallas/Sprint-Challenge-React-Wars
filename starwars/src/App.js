@@ -3,6 +3,7 @@ import axios from "axios";
 import styled from "styled-components";
 import './App.css';
 import Character from './components/Character';
+import SearchForm from './components/SearchForm';
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -24,24 +25,27 @@ const App = () => {
   `;
 
   const [characterArr, setCharacterArr] = useState([]);
-  let charCount;
   
   useEffect(() => {
     axios.get("https://swapi.py4e.com/api/people/")
       .then(res => {
-        charCount = res.data.count;
         setCharacterArr(res.data.results);
+        initialState = res.data.results;
       })
       .catch(err => {
         console.log(err);
       });
   }, [])
   
-  console.log(characterArr);
+  const initialState = characterArr;
 
   return (
     <div className="App">
       <MainHeader className="Header">Star Wars Characters</MainHeader>
+      <SearchForm
+        characterArr={characterArr}
+        setCharacterArr={setCharacterArr}
+        initialState={initialState}/>
       <CardSection>
       {
         characterArr.map((char, i) => {
