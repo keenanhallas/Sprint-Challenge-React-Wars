@@ -30,7 +30,6 @@ const App = () => {
     axios.get("https://swapi.py4e.com/api/people/")
       .then(res => {
         setCharacterArr(res.data.results);
-        initialState = res.data.results;
       })
       .catch(err => {
         console.log(err);

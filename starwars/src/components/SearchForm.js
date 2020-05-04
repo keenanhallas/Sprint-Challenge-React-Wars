@@ -24,12 +24,14 @@ const SearchForm = ({characterArr, setCharacterArr, initialState}) => {
 		        type="button"
 		        value="Search"
                 onClick={() => {
-                    setCharacterArr([]);
+                    const newArray = [];
                     characterArr.map(char => {
                         if (char.name.includes(inputValue)){
-                            setCharacterArr([char]);
+                            newArray.push(char);
+                            console.log(newArray);
                         }
                     });
+                    setCharacterArr(newArray);
                 }}/>
         </form>
     );
