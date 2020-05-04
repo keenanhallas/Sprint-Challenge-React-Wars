@@ -2,25 +2,29 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 const SearchForm = ({characterArr, setCharacterArr, initialState}) => {
-    const FormWraper = styled.div`
+    const StyledLabel = styled.label`
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+    margin-right: 5px;
+    `;
+
+    const StyledInput = styled.input`
     font-family: 'Montserrat', sans-serif;
     font-size: 1.25rem;
     `;
 
     const [inputValue, setInputValue] = useState("");
-    
-    const changeHandler = event => {
-        setInputValue(event.target.value);
-        setCharacterArr(initialState);
-    };
-    
+
     return (
         <form>
-	        <label>Character Search</label>
+	        <StyledLabel>Character Search</StyledLabel>
 	        <input
 		        type="text"
-		        onChange={changeHandler}/>
-            <input
+		        onChange={(event) => {
+                    setInputValue(event.target.value);
+                    setCharacterArr(initialState);
+                }}/>
+            <StyledInput
 		        type="button"
 		        value="Search"
                 onClick={() => {

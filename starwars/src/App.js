@@ -4,6 +4,7 @@ import styled from "styled-components";
 import './App.css';
 import Character from './components/Character';
 import SearchForm from './components/SearchForm';
+import GetCharacters from './components/GetCharacters';
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
