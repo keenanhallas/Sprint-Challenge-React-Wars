@@ -21,7 +21,9 @@ const SearchForm = ({characterArr, setCharacterArr, initialState}) => {
 	        <input
 		        type="text"
 		        onChange={(event) => {
+                    event.preventDefault();
                     setInputValue(event.target.value);
+                    console.log(initialState);
                     setCharacterArr(initialState);
                 }}/>
             <StyledInput

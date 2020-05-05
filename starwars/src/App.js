@@ -26,18 +26,18 @@ const App = () => {
   `;
 
   const [characterArr, setCharacterArr] = useState([]);
+  const [initialState, setInitialState] = useState([]);
   
   useEffect(() => {
     axios.get("https://swapi.py4e.com/api/people/")
       .then(res => {
         setCharacterArr(res.data.results);
+        setInitialState(res.data.results);
       })
       .catch(err => {
         console.log(err);
       });
   }, [])
-  
-  const initialState = characterArr;
 
   return (
     <div className="App">
